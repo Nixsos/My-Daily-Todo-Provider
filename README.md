@@ -1,16 +1,12 @@
-# my_daily_todo_provider
+# My Daily Todo App
 
-A new Flutter project.
+A Todo App using flutter framework and in the state mangment departement i used the Provider
 
-## Getting Started
+## Screens
+### Desc Image
+ <img src="https://user-images.githubusercontent.com/49596893/177047006-46a9d74d-1467-4282-858d-c4635f64c26e.png">
 
-This project is a starting point for a Flutter application.
+### The Main app window
+ <img src="https://user-images.githubusercontent.com/49596893/177043781-0880a9d5-4564-4ca3-b86f-8abd8360cba1.PNG" width="400" height="800">
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
