@@ -1,23 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import '../models/task.dart';
+import '../models/task_data.dart';
 import '../widgets/task_list.dart';
 import 'add_task_screen.dart';
 
-class TasksScreen extends StatefulWidget {
-  const TasksScreen({Key? key}) : super(key: key);
-
-  @override
-  State<TasksScreen> createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
-  List<Task> taskList = [
-    Task(title: 'gg'),
-    Task(title: 'gg'),
-    Task(title: 'gg'),
-  ];
-
+class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,9 +40,8 @@ class _TasksScreenState extends State<TasksScreen> {
                 ),
               ],
             ),
-            //Comment
             Text(
-              '${taskList.length} Tasks',
+              '${Provider.of<TaskData>(context).taskList.length} Tasks',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 18,
@@ -63,6 +50,7 @@ class _TasksScreenState extends State<TasksScreen> {
             SizedBox(
               height: 20,
             ),
+            //task List
             Expanded(
               child: Container(
                 height: 300,
@@ -72,7 +60,7 @@ class _TasksScreenState extends State<TasksScreen> {
                     Radius.circular(20),
                   ),
                 ),
-                child: TaskList(taskList),
+                child: TaskList(),
               ),
             ),
           ],
@@ -91,10 +79,10 @@ class _TasksScreenState extends State<TasksScreen> {
                   bottom: MediaQuery.of(context).viewInsets.bottom,
                 ),
                 child: AddTaskScreen((newTaskTitle) {
-                  setState(() {
-                    taskList.add(Task(title: newTaskTitle));
-                    Navigator.pop(context);
-                  });
+                  // setState(() {
+                  //   taskList.add(Task(title: newTaskTitle));
+                  //   Navigator.pop(context);
+                  // });
                 }),
               ),
             ),
