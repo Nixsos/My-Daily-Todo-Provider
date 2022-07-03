@@ -19,8 +19,9 @@ class TaskList extends StatelessWidget {
               isChacked: taskData.taskList[index].isDone,
               changeStateFun: (bool? newValue) {
                 // setState(() {
-                //   widget.tasks[index].doneChange();
+                //  widget.tasks[index].doneChange();
                 // });
+                taskData.doneChangeCall(taskData.taskList[index]);
               },
             );
           },
