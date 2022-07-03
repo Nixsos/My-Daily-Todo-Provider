@@ -17,11 +17,11 @@ class TaskList extends StatelessWidget {
             return TaskTile(
               taskTitle: taskData.taskList[index].title,
               isChacked: taskData.taskList[index].isDone,
-              changeStateFun: (bool? newValue) {
-                // setState(() {
-                //  widget.tasks[index].doneChange();
-                // });
+              checkBoxChange: (bool? newValue) {
                 taskData.doneChangeCall(taskData.taskList[index]);
+              },
+              longPressCallBack: () {
+                taskData.deleteTask(taskData.taskList[index]);
               },
             );
           },

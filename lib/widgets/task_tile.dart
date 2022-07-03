@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 class TaskTile extends StatelessWidget {
   final String taskTitle;
   final bool isChacked;
-  final Function(bool?) changeStateFun;
+  final Function(bool?) checkBoxChange;
+  final Function() longPressCallBack;
   //final bool? isChacked;
 
   const TaskTile({
     Key? key,
     required this.isChacked,
-    required this.changeStateFun,
+    required this.checkBoxChange,
+    required this.longPressCallBack,
     required this.taskTitle,
   }) : super(key: key);
 
@@ -20,7 +22,8 @@ class TaskTile extends StatelessWidget {
       trailing: Checkbox(
           activeColor: Colors.teal[400],
           value: isChacked,
-          onChanged: changeStateFun),
+          onChanged: checkBoxChange),
+      onLongPress: longPressCallBack,
     );
   }
 }
